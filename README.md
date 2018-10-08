@@ -1,19 +1,20 @@
 # BackendProject
-Backend Assessment para Clip.
+Backend Assessment for Clip.
 
-Proyecto realizado con Spring Boot conectado a una base de datos monogoDB mediante spring-data.
-La información de conexión con la base de datos se establece por medio del archivo application.properties en éste caso en particular se dejaron los parámetros por default.
+This Project was built on spring-boot and it is connected to a mongoDb data base trough spring-data. The connection information with de DB is in the file application.properties, for this particular case it uses the default options.
 
-La aplicación consiste en una aplicación de linea de comando que puede procesar 4 operaciones básicas sobre un conjunto de transacciones.
-Estas operaciones son:
-Add -> Añade una nueva transacción al usuario indicado
-Show -> Muestra la información de una transacción.
-List -> Muestra la información de las transacciones de un usuario.
-Sum -> Muestra la suma de las cantidades de todas las transacciones de un usuario.
+The application requires that the user install mongoDB and **it is advisable that the monogoDB starts with the option –dbpath pointing  the folder where the aplplication is.**
 
-La forma de invocar estas operaciones sería introducir en la linea de comandos los siguientes comandos respectivamente:
+The application runs from the command line and it consists of 4 operations that deliver information about transaction in a json form. These operations are:
+- Add -> Adds a transaction with the user indicated.
+- Show -> Show a transaction that corresponds to a particular id.
+- List -> Show all the transaction from an user.
+- Sum -> Returns the sum of all the transactions amounts that corresponds an user.
 
-./application <user_id> add <transaction_json>  --->Add
-./application <user_id> <transaction_id> --->Show
-./application <user_id> list  --->List
-./application <user_id> sum   --->Sum
+**When you are introducing the arguments you must remember to escape the quotes characters.**
+
+The way to invoke the operations are:
+- `./application <user_id> add <transaction_json>` --->Add
+- `./application <user_id> <transaction_id>` --->Show 
+- `./application <user_id> list` --->List 
+- `./application <user_id> sum` --->Sum
